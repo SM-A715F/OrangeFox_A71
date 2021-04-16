@@ -1,0 +1,34 @@
+# mount point       fstype    device                                                                flags
+/super              ext4      super                                                                 flags=display="Super";backup=1;logical;wipeingui                         
+/super_image        emmc      super                                                                 flags=display="Super image";backup=1;logical
+/system             ext4      system                                                                flags=display="System";backup=1;logical;wipeingui
+/system_image       emmc      system                                                                flags=display="System image";backup=1;flashimg=1;logical;
+/vendor             ext4      vendor                                                                flags=display="Vendor";backup=1;logical;
+/vendor_image       emmc      vendor                                                                flags=display="Vendor image";backup=1;flashimg=1;logical;
+/odm                ext4      odm                                                                   flags=display="Odm";backup=1;logical;
+/odm_image          emmc      odm                                                                   flags=display="Odm image";backup=1;flashimg=1;logical;
+/product            ext4      product                                                               flags=display="Product";backup=1;logical;
+/product_image      emmc      product                                                               flags=display="Product image";backup=1;flashimg=1;logical;
+/boot               emmc      /dev/block/bootdevice/by-name/boot                                    flags=display="Boot";backup=1;flashimg=1;
+/recovery           emmc      /dev/block/bootdevice/by-name/recovery                                flags=display="Recovery";backup=1;flashimg=1;
+/data               f2fs      /dev/block/bootdevice/by-name/userdata                                flags=display="Data";encryptable=/dev/block/platform/soc/1d84000.ufshc/by-name/keymaster
+/metadata	          ext4		  /dev/block/bootdevice/by-name/metadata		                            flags=backup=1;display="Metadata"
+/cache              ext4      /dev/block/bootdevice/by-name/cache                                   flags=display="Cache";
+/misc               emmc      /dev/block/bootdevice/by-name/misc                                    flags=display="Misc";backup=1;flashimg=1;
+/dtbo               emmc      /dev/block/bootdevice/by-name/dtbo                                    flags=display="Dtbo";backup=1;flashimg=1;
+/efs		            ext4		  /dev/block/bootdevice/by-name/sec_efs			                            flags=backup=1;display="EFS"
+/firmware	          emmc		  /dev/block/bootdevice/by-name/apnhlos			                            flags=backup=1;display="Firmware";fsflags=ro
+/modem		          emmc	   	/dev/block/bootdevice/by-name/modem			                              flags=backup=1;display="Modem"
+/dsp		            emmc		  /dev/block/bootdevice/by-name/dsp          
+/carrier	          ext4		  /dev/block/bootdevice/by-name/carrier
+/keymaster          ext4		  /dev/block/bootdevice/by-name/keymaster		                            flags=backup=1;wipeingui
+/keystore	          ext4		  /dev/block/bootdevice/by-name/keystore		                            flags=backup=1;wipeingui
+/optics	            ext4		  /dev/block/bootdevice/by-name/optics			                            flags=backup=1;display="Optics"
+/optics_img	        emmc		  /dev/block/bootdevice/by-name/optics			                            flags=backup=1;flashimg;display="Optics image"
+/prism		          ext4	  	/dev/block/bootdevice/by-name/prism			                              flags=backup=1;display="Prism"
+/prism_img	        emmc	  	/dev/block/bootdevice/by-name/prism		                              	flags=backup=1;flashimg;display="Prism image"
+/vbmeta_samsung	    emmc	    /dev/block/bootdevice/by-name/vbmeta_samsung
+
+# Removable storage
+/external_sd	vfat		/dev/block/mmcblk0p1	/dev/block/mmcblk0		flags=storage;wipeingui;removable
+/usb-otg	vfat		/dev/block/sdf1	/dev/block/sdf			flags=display="USB-OTG";storage;wipeingui;removable
